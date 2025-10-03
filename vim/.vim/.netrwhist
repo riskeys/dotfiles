@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/riskeys/dotfiles/vim/.vim/config'
+let g:netrw_dirhist_8='/home/riskeys/dotfiles/vim/.vim'
+let g:netrw_dirhist_7='/home/riskeys/dotfiles/vim/.vim/config'
+let g:netrw_dirhist_6='/home/riskeys/dotfiles/vim/.vim'
+let g:netrw_dirhist_5='/home/riskeys/dotfiles/vim'
+let g:netrw_dirhist_4='/home/riskeys/dotfiles/vim/.vim'
+let g:netrw_dirhist_3='/home/riskeys/dotfiles/vim'
+let g:netrw_dirhist_2='/home/riskeys/dotfiles'
+let g:netrw_dirhist_1='/home/riskeys/.vim'

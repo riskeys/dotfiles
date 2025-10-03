@@ -1,0 +1,10 @@
+require("config.options")
+require("core.lazy")
+require("core.lsp")
+require("config.keymaps")
+require("config.autocmds")
+require("config.appearance")
+require("config.terminal")
+
+require("config.prayercall")
+require("config.remindern")
