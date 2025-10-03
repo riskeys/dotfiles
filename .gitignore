@@ -1,0 +1,3 @@
+vim/.vim/pack/
+nvim/.config/nvim/plugins_temp/
+nvim/.config/nvim/lua/output_*.json

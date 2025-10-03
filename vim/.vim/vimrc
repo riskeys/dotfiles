@@ -1,0 +1,54 @@
+set rnu
+set nu
+set clipboard^=unnamed,unnamedplus
+ 
+
+" set shell=C:/Program\ Files/Git/usr/bin/bash.exe
+" set shell=powershell.exe
+set shell=bash
+ 
+" set showmode=false
+set scrolloff=10
+ 
+set tabstop=2
+set shiftwidth=2
+let g:mapleader=' '
+ 
+set ignorecase
+set notimeout
+set autoindent
+set hlsearch
+set wildmenu
+set ruler
+set splitright
+set splitbelow
+set backspace=indent,eol,start
+ 
+set cursorline
+setlocal colorcolumn=140
+ 
+autocmd FileType json setlocal foldmethod=indent
+autocmd FileType json setlocal foldenable
+ 
+autocmd FileType rust setlocal foldmethod=indent
+autocmd FileType rust setlocal foldenable
+filetype plugin on
+ 
+runtime keymap.vim
+runtime config/appearance.vim
+runtime config/fzf.vim
+runtime lsp.vim
+ 
+" --- PLUGINS ---
+" list of plugins, text only, no installation
+" prabirshrestha/vim-lsp
+" mattn/vim-lsp-settings
+" github/copilot.vim
+" iamcco/markdown-preview.nvim
+" rust-lang/rust.vim
+" prabirshrestha/asyncomplete.vim
+" prabirshrestha/asyncomplete-lsp.vim
+" tpope/vim-fugitive
+" tpope/vim-commentary
+" tpope/vim-vinegar
+" tpope/vim-surround
