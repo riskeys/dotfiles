@@ -28,6 +28,7 @@ return {
 					in_place = false,
 					stay = false,
 				},
+				format = true,
 				behavior = {
 					formatters = function(body)
 						print("Formatting with jq")

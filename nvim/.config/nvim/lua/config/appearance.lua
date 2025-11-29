@@ -26,4 +26,4 @@ vim.api.nvim_create_user_command("ToggleDarkMode", function()
     end
 end, {})
 
-vim.keymap.set("n", "<C-b>", ":ToggleDarkMode<CR>", { desc = "Toggle Dark Mode" })
+vim.keymap.set("n", "<C-b><C-g>", ":ToggleDarkMode<CR>", { desc = "Toggle Dark Mode" })

@@ -1,5 +1,4 @@
-Perfect 👍 stow will make your dotfiles repo clean and maintainable. Let’s set it up that way.
-
+# Personal Guide
 ---
 
 ## 1. Install `stow`
@@ -18,7 +17,7 @@ Each "package" is a folder inside your dotfiles repo, and inside it you mirror t
 
 Example structure:
 
-```
+```bash
 dotfiles/
 ├── vim/
 │   └── .vim/

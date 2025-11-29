@@ -56,4 +56,4 @@ end
 -- Create a floating window with default dimensions
 vim.api.nvim_create_user_command("Fleminal", toggle_terminal, {})
 
-vim.keymap.set({ "n", "t" }, "<Leader>tt", "<cmd>Fleminal<CR>", { desc = "Fleminal" })
+-- vim.keymap.set({ "n", "t" }, "<Leader>tt", "<cmd>Fleminal<CR>", { desc = "Fleminal" })

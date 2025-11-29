@@ -4,7 +4,7 @@ vim.lsp.enable({
     "tailwindcss",
     "html_ls",
     "css_ls",
-    -- "ts_ls",
+    "ts_ls",
     "lua_ls",
     "omnisharp",
 })

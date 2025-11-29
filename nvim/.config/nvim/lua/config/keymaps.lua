@@ -14,17 +14,10 @@ vim.keymap.set("v", "<leader>xl", "y'<P'<O<ESC>'>o<ESC>:<C-u>'<,'>!/bin/bash<CR>
 
 vim.keymap.set("n", "<Leader>fj", "ggVG:!jq .<CR>", { desc = 'Formatting Json' })
 vim.keymap.set("n", "<Leader>xb", "<cmd>ToggleTabBufferKeymap<CR>", { desc = 'Toggle Tab Buffer Keymap' })
+vim.keymap.set("n", "<Leader>xi", "<cmd>e ~/dotfiles/i3/.config/i3/config<CR>", { desc = 'Open i3 config' })
+vim.keymap.set("n", "<Leader>xn", "<cmd>e ~/dotfiles/nvim/.config/nvim/init.lua<CR>", { desc = 'Open i3 config' })
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "javascript", "typescript" },
-    callback = function()
-        vim.keymap.set("i", ",tlinf", "this.logger.info(``);<Esc>F`i",
-            { noremap = true, buffer = true, desc = '(this) Logger: info' })
-        vim.keymap.set("i", ",tldbg", "this.logger.debug(``);<Esc>F`i",
-            { noremap = true, buffer = true, desc = '(this) Logger: debug' })
-        vim.keymap.set("i", ",tlerr", "this.logger.error(``);<Esc>F`i",
-            { noremap = true, buffer = true, desc = '(this) Logger: error' })
-        vim.keymap.set("i", ",tlwrn", "this.logger.warn(``);<Esc>F`i",
-            { noremap = true, buffer = true, desc = '(this) Logger: warning' })
-    end,
-})
+vim.keymap.set("n", "<BS>", ":bp<CR>", { noremap = true, desc = 'Buffer: previous' })
+vim.keymap.set("n", "\\", ":bn<CR>", { noremap = true, desc = 'Buffer: next' })
+vim.keymap.set("n", "<C-b><C-b>", ":ls<CR>", { noremap = true, desc = 'Buffer: list' })
+vim.keymap.set("n", "<C-b><C-d>", ":bd<CR>", { noremap = true, desc = 'Buffer: delete' })

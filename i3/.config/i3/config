@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # font pango:monospace 10
 # font pango:GeistMono Nerd Font 10
-font pango:JetBrains Mono 10
+font pango:JetBrains Mono 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -23,8 +23,18 @@ font pango:JetBrains Mono 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec_always --no-startup-id feh --bg-scale ~/Downloads/tranquilitybase.jpg ~/Downloads/tranquilitybase.jpg
+# exec_always --no-startup-id feh --bg-scale ~/Downloads/tranquilitybase.jpg ~/Downloads/tranquilitybase.jpg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/lofi.jpeg ~/Pictures/lofi.jpeg
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/Iyas.jpeg ~/Pictures/Iyas.jpeg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/spir.jpeg ~/Pictures/spir.jpeg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/frieren-black-bg.webp ~/Pictures/frieren-black-bg.webp
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/autochess/gundam_merah.jpeg ~/Pictures/autochess/gundam_merah.jpeg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/gundam/merah_api.jpeg ~/Pictures/gundam/merah_api.jpeg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/gundam/dua_biru.jpeg ~/Pictures/gundam/dua_biru.jpeg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/autochess/jakiro.jpg ~/Pictures/autochess/jakiro.jpg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/autochess/anakband.png ~/Pictures/autochess/anakband.jpg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/autochess/juggerr.png ~/Pictures/autochess/juggerr.jpg
+
 exec --no-startup-id picom
 exec --no-startup-id dex --autostart --environment i3
 
@@ -35,7 +45,7 @@ exec_always --no-startup-id ./.config/polybar/launch_polybar.sh
 exec_always --no-startup-id betterlockscreen -w dim
 
 # Alternative (set last used background)
-# exec --no-startup-id source ~/Downloads/unknown-pleasures.jpg
+exec --no-startup-id source ~/Pictures/autochess/anakband.jpg
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
