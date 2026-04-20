@@ -13,18 +13,3 @@ vim.keymap.set('n', '<leader>dtc', ':DenoUnitTestCurrentFile<CR>',
 	{ noremap = true, silent = true, desc = 'Run Deno Unit Test for Current File' })
 vim.keymap.set('n', '<leader>dtd', ':ToggleTerm<CR>deno task dev_v2',
 	{ noremap = true, silent = true, desc = 'Run Deno' })
-
-vim.cmd([[
-	iabbrev pubasync public async
-	iabbrev pubstat public static
-	iabbrev privasync private async
-	iabbrev privonly private readonly
-	iabbrev tldbg this.logger.debug
-	iabbrev tlinf this.logger.info
-	iabbrev tlerr this.logger.error
-	iabbrev exint export interface
-	iabbrev extyp export type
-	iabbrev excls export class
-	iabbrev denotest Deno.test("", () => {});
-	iabbrev denotbil deno task build-image-local
-]])

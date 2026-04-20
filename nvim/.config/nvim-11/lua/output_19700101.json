@@ -1,0 +1,7 @@
+{
+  "status": false,
+  "request": {
+    "path": "/sholat/jadwal/1219/1970/01/01"
+  },
+  "message": "Data not found"
+}

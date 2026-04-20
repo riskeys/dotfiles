@@ -9,5 +9,6 @@ iabbrev exint export interface
 iabbrev extyp export type
 iabbrev excls export class
 iabbrev denotest Deno.test("", () => {});
+iabbrev denotbil deno task build-image-local
 
 " nnoremap <C-m> :Fleminal<CR>ideno task dev<CR><Esc>

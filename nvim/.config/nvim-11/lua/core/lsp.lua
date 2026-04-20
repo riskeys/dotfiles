@@ -2,11 +2,13 @@ vim.lsp.enable({
     "gopls",
     "denols",
     "tailwindcss",
+    "emmet-language-server",
     "html_ls",
     "css_ls",
     "ts_ls",
     "lua_ls",
     "omnisharp",
+    "pylsp",
 })
 
 vim.diagnostic.config({

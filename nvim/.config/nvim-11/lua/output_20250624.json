@@ -1,0 +1,23 @@
+{
+  "status": true,
+  "request": {
+    "path": "/sholat/jadwal/1219/2025/06/24"
+  },
+  "data": {
+    "id": 1219,
+    "lokasi": "KOTA BANDUNG",
+    "daerah": "JAWA BARAT",
+    "jadwal": {
+      "tanggal": "Selasa, 24/06/2025",
+      "imsak": "04:29",
+      "subuh": "04:39",
+      "terbit": "05:53",
+      "dhuha": "06:26",
+      "dzuhur": "11:56",
+      "ashar": "15:16",
+      "maghrib": "17:51",
+      "isya": "19:01",
+      "date": "2025-06-24"
+    }
+  }
+}

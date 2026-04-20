@@ -1,28 +1,17 @@
 return {
-	cmd = {
-		"lua-language-server",
+	cmd = { 'lua-language-server' },
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" }
+			}
+		}
 	},
-	filetypes = {
-		"lua",
+	workspace = {
+		checkThirdParty = false,
+		library = {
+			vim.env.VIMRUNTIME,
+		},
 	},
-	root_markers = {
-		".git",
-		".luacheckrc",
-		".luarc.json",
-		".luarc.jsonc",
-		".stylua.toml",
-		"selene.toml",
-		"selene.yml",
-		"stylua.toml",
-	},
-	-- settings = {
-	--     Lua = {
-	--         diagnostics = {
-	--             --     disable = { "missing-parameters", "missing-fields" },
-	--         },
-	--     },
-	-- },
-
-	single_file_support = true,
-	log_level = vim.lsp.protocol.MessageType.Warning,
+	telemetry = { enable = false },
 }
