@@ -1,6 +1,7 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-[>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 -- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -28,7 +29,7 @@ vim.keymap.set("n", "<Leader>cd", ":cd ~/Documents/repos/dashify<CR>", { noremap
 vim.keymap.set("n", "<Leader>ci", ":cd ~/Documents/repos/inspira<CR>", { noremap = true, desc = 'change dir: inspira' })
 vim.keymap.set("n", "<Leader>cx", ":cd ~/Documents/repos/xyz<CR>", { noremap = true, desc = 'change dir: xyz' })
 vim.keymap.set("n", "<Leader>cei", ":e ~/dotfiles/i3/.config/i3/config<CR>",
-    { noremap = true, desc = 'change dir: inspira' })
+	{ noremap = true, desc = 'change dir: inspira' })
 
 -- Session management
 vim.keymap.set("n", "<Leader>soa", ":so session_1.vim<CR>", { noremap = true, desc = 'Session: open 1' })
@@ -47,9 +48,13 @@ vim.keymap.set("n", "cx", ":CopilotChat", { noremap = true, desc = 'CopilotCha' 
 
 -- window
 vim.keymap.set("n", "<C-l>", "<C-w>>", { noremap = true, desc = 'Window: increase width' })
-vim.keymap.set("n", "<C-l>", "<C-w>>", { noremap = true, desc = 'Window: increase width' })
+vim.keymap.set("n", "<C-h>", "<C-w><", { noremap = true, desc = 'Window: decrease width' })
 vim.keymap.set("n", "<C-j>", "<C-w>+", { noremap = true, desc = 'Window: increase height' })
 vim.keymap.set("n", "<C-k>", "<C-w>-", { noremap = true, desc = 'Window: decrease height' })
+
+-- quickfix / location list
+vim.keymap.set("n", "[x", ":ccl<CR>", { noremap = true, silent = true, desc = 'Quickfix: close' })
+vim.keymap.set("n", "]x", ":lcl<CR>", { noremap = true, silent = true, desc = 'Location List: close' })
 
 
 -- fzf
@@ -68,3 +73,8 @@ vim.keymap.set("n", "<leader><leader>", ":Buffers<CR>", { desc = "[ ] Find exist
 vim.keymap.set("n", "<Leader>op", "<CMD>Oil<CR>", { desc = "Oil: Open parent directory" })
 vim.keymap.set("n", "<Leader>ot", require("oil").toggle_float, { desc = "Oil: Open toggle directory" })
 
+
+local wk = require("which-key")
+wk.add({
+	{ '<leader>f', group = 'File', mode = { 'n', 'x' } },
+})
