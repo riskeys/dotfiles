@@ -1,4 +1,4 @@
-require('vim._core.ui2').enable({})
+-- require('vim._core.ui2').enable({})
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -25,5 +25,9 @@ vim.opt.scrolloff = 10
 vim.o.colorcolumn = "140"
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
--- vim.opt.winborder = "solid" -- https://neovim.io/doc/user/options.html#'winborder'
+vim.o.statusline = ""
+vim.opt.statusline:append(" [bufnr: %n]")
+-- vim.opt.winborder = "single" -- https://neovim.io/doc/user/options.html#'winborder'
+
+
 
