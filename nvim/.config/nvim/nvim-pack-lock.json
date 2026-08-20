@@ -44,6 +44,14 @@
       "rev": "6656c9d332735ca6a27725e0fb45a1715c4372d9",
       "src": "https://github.com/mistweaverco/kulala.nvim"
     },
+    "live-server.nvim": {
+      "rev": "85915d0e7dd926a54b0082aaeafc10a82bfe8288",
+      "src": "https://github.com/selimacerbas/live-server.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "a9fdfdacabca35334209b3f76158bac9537839a5",
+      "src": "https://github.com/selimacerbas/markdown-preview.nvim"
+    },
     "markview.nvim": {
       "rev": "5a890277ba7edd7823d20f4d0525132d277aea9a",
       "src": "https://github.com/OXY2DEV/markview.nvim"
@@ -72,9 +80,17 @@
       "rev": "4b7fbaa239c5db6b36f424a4521ca9f1a401be33",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-tree.lua": {
+      "rev": "07f541fcaa4a5ae019598240362449ab7e9812b3",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
     "nvim-treesitter": {
       "rev": "df7489eeea351bece7fd0f9c825be5cb6a1438f0",
       "src": "https://github.com/neovim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "2795c26c916bb3c57dde308b82be51971fa92747",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
@@ -87,6 +103,10 @@
     "rest.nvim": {
       "rev": "714d5512aaec5565d55652480c16c26f8d95645d",
       "src": "https://github.com/rest-nvim/rest.nvim"
+    },
+    "roslyn.nvim": {
+      "rev": "7d8c166a0c70473ffa558d4d2430769d581fa8dd",
+      "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "treesitter-parser-registry": {
       "rev": "6eb15358bb9fc88f0d3401d8538d56652e9bdf3c",
@@ -111,6 +131,10 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "zig.vim": {
+      "rev": "61109e5166f2bdb7578493a0220a92c43627fc82",
+      "src": "git@cb-r32:ziglang/zig.vim.git"
     }
   }
 }

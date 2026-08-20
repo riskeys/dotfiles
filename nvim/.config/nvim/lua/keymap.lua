@@ -28,8 +28,14 @@ vim.keymap.set("n", "<Leader>cm", ":cd ~/Documents/repos/minilodon<CR>", { norem
 vim.keymap.set("n", "<Leader>cd", ":cd ~/Documents/repos/dashify<CR>", { noremap = true, desc = 'change dir: dashify' })
 vim.keymap.set("n", "<Leader>ci", ":cd ~/Documents/repos/inspira<CR>", { noremap = true, desc = 'change dir: inspira' })
 vim.keymap.set("n", "<Leader>cx", ":cd ~/Documents/repos/xyz<CR>", { noremap = true, desc = 'change dir: xyz' })
+vim.keymap.set("n", "<Leader>cc", ":cd ~/Documents/repos/dev<CR>", { noremap = true, desc = 'change dir: dev' })
+vim.keymap.set("n", "<Leader>co", ":cd ~/Documents/repos/chroneo<CR>", { noremap = true, desc = 'change dir: chroneo' })
+vim.keymap.set("n", "<Leader>ch", ":cd ~/Documents/repos/humbucker<CR>", { noremap = true, desc = 'change dir: humbucker' })
 vim.keymap.set("n", "<Leader>cei", ":e ~/dotfiles/i3/.config/i3/config<CR>",
-	{ noremap = true, desc = 'change dir: inspira' })
+	{ noremap = true, desc = 'edit: i3' })
+
+vim.keymap.set("n", "<Leader>ctb", ":vsplit ~/Documents/repos/tickets/backlog.md<CR>", { noremap = true, desc = 'open backlog' })
+vim.keymap.set("n", "<Leader>ctm", ":vsplit ~/Documents/repos/tickets/morning.md<CR>", { noremap = true, desc = 'open backlog' })
 
 -- Session management
 vim.keymap.set("n", "<Leader>soa", ":so session_1.vim<CR>", { noremap = true, desc = 'Session: open 1' })
@@ -44,7 +50,7 @@ vim.keymap.set("n", "<Leader>ssc", ":mksession! session_3.vim", { noremap = true
 vim.keymap.set("n", "cp", ":CopilotChatToggle<CR>", { noremap = true, desc = 'CopilotChat: Toggle' })
 vim.keymap.set("n", "co", ":CopilotChatOpen<CR>", { noremap = true, desc = 'CopilotChat: Open' })
 vim.keymap.set("n", "cm", ":CopilotChatLoad ", { noremap = true, desc = 'CopilotChat: Load' })
-vim.keymap.set("n", "cx", ":CopilotChat", { noremap = true, desc = 'CopilotCha' })
+vim.keymap.set("n", "cx", ":CopilotChat", { noremap = true, desc = 'CopilotChat' })
 
 -- window
 vim.keymap.set("n", "<C-l>", "<C-w>>", { noremap = true, desc = 'Window: increase width' })
@@ -76,5 +82,96 @@ vim.keymap.set("n", "<Leader>ot", require("oil").toggle_float, { desc = "Oil: Op
 
 local wk = require("which-key")
 wk.add({
-	{ '<leader>f', group = 'File', mode = { 'n', 'x' } },
+	{ '<leader>f', group = 'FZF', mode = { 'n', 'x' } },
+	{ ',g', group = 'Vimgrep', mode = { 'n', 'x' } },
 })
+
+
+-- vimgrep
+
+-- start: Vimgrep
+local vimgrep_jump = function()
+	local input = vim.fn.input("Enter search term (vimgrep): ")
+	vim.cmd("vimgrep /" .. input .. "/gj %")
+	if #vim.fn.getqflist() > 0 then
+		if #vim.fn.getqflist() == 1 then
+			vim.cmd("cfirst")
+		else
+			vim.cmd("copen")
+		end
+	else
+		print("No matches found")
+	end
+end
+
+local vimgrep_jump_fuzzy = function()
+	local input = vim.fn.input("Enter search term (vimgrep/fuzzy): ")
+	vim.cmd("vimgrep /" .. input .. "/gjf %")
+	if #vim.fn.getqflist() > 0 then
+		if #vim.fn.getqflist() == 1 then
+			vim.cmd("cfirst")
+		else
+			vim.cmd("copen")
+		end
+	else
+		print("No matches found")
+	end
+end
+
+
+local vimgrep_word_in_filetype = function()
+	local word = vim.fn.expand("<cword>")
+	local filetype = vim.bo.filetype
+	-- vim.cmd("vimgrep /\\C" .. word .. "/gj **/*." .. filetype)
+	vim.cmd("vimgrep /" .. word .. "/gj **/*." .. filetype)
+	if #vim.fn.getqflist() > 0 then
+		if #vim.fn.getqflist() == 1 then
+			vim.cmd("cfirst")
+		else
+			vim.cmd("copen")
+		end
+	else
+		print("No matches found")
+	end
+end
+
+local vimgrep_word_in_current_file = function()
+	local word = vim.fn.expand("<cword>")
+	vim.cmd("lvimgrep /\\C" .. word .. "/gj %")
+	if #vim.fn.getloclist(0) > 0 then
+		if #vim.fn.getloclist(0) == 1 then
+			vim.cmd("lfirst")
+		else
+			vim.cmd("lopen")
+		end
+	else
+		print("No matches found")
+	end
+end
+
+vim.keymap.set("n", ",gj", vimgrep_jump, { desc = "Vimgrep (jump)" })
+vim.keymap.set("n", ",gf", vimgrep_jump_fuzzy, { desc = "Vimgrep (jump + fuzzy)" })
+vim.keymap.set("n", ",gq", vimgrep_word_in_filetype, { desc = "Vimgrep this word (quickfix)" })
+vim.keymap.set("n", ",gl", vimgrep_word_in_current_file, { desc = "Vimgrep this word (location list)" })
+
+
+-- end: Vimgrep
+
+-- start: grep
+--
+-- vim.keymap.set("n", ",g,", function()
+-- 	local word = vim.fn.expand("<cword>")
+-- 	local filetype = vim.bo.filetype
+-- 	vim.cmd("grep " .. word .. " --type " .. filetype)
+-- 	if #vim.fn.getqflist() > 0 then
+-- 		if #vim.fn.getqflist() == 1 then
+-- 			vim.cmd("cfirst")
+-- 		else
+-- 			vim.cmd("copen")
+-- 		end
+-- 	else
+-- 		print("No matches found")
+-- 	end
+-- end, { desc = "Grep for the word under the cursor" })
+
+-- end: grep
