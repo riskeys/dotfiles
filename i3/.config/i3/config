@@ -24,10 +24,10 @@ font pango:JetBrains Mono 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 # exec_always --no-startup-id feh --bg-scale ~/Downloads/tranquilitybase.jpg ~/Downloads/tranquilitybase.jpg
-exec_always --no-startup-id feh --bg-scale ~/Pictures/lofi.jpeg ~/Pictures/lofi.jpeg
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/lofi.jpeg ~/Pictures/lofi.jpeg
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/Iyas.jpeg ~/Pictures/Iyas.jpeg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/spir.jpeg ~/Pictures/spir.jpeg
-# exec_always --no-startup-id feh --bg-scale ~/Pictures/frieren-black-bg.webp ~/Pictures/frieren-black-bg.webp
+exec_always --no-startup-id feh --bg-scale ~/Pictures/frieren-black-bg.webp ~/Pictures/frieren-black-bg.webp
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/autochess/gundam_merah.jpeg ~/Pictures/autochess/gundam_merah.jpeg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/gundam/merah_api.jpeg ~/Pictures/gundam/merah_api.jpeg
 # exec_always --no-startup-id feh --bg-scale ~/Pictures/gundam/dua_biru.jpeg ~/Pictures/gundam/dua_biru.jpeg
@@ -216,6 +216,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+- exec "brightnessctl 10%-"
+bindsym $mod++ exec "brightnessctl 10%+"
 
 bindsym Print exec "flameshot gui"
 
